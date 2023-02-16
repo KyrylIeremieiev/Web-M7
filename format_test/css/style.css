@@ -1,0 +1,59 @@
+*, *::after, *::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --main-color:rgba(90,137,137,1.0);
+    --main-background:rgba(90,137,137,0.1);
+    --logo-line-color:rgb(25,174,170);
+    
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body{
+    font-size: 2rem;
+    min-height: 100vh;
+
+}
+
+header{
+    height: 18rem;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 0.1rem 0 rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+}
+
+.logo{
+    height: 100%;
+    position: relative;
+}
+
+.logo::after{
+    content: "";
+    width: 70rem;
+    height: 0.5rem;
+    background: var(--logo-line-color);
+    position: absolute;
+    top: -15%;
+    left: -110%;
+}
+
+
+.logo__img{
+    height: 100%;
+    width: 100%;
+}   
+
+main{
+    background: var(--main-background);
+    height: 80vh;
+
+}
