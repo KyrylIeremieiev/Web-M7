@@ -13,7 +13,7 @@
 
 html{
     font-size: 62.5%;
-    overflow-x: hidden;
+/*     overflow-x: hidden; */
 }
 
 body{
@@ -24,7 +24,7 @@ body{
 
 header{
     height: 18rem;
-    width: 100vw;
+    width: 100%;
     display: flex;
     justify-content: center;
     box-shadow: 0 0.1rem 0 rgba(0, 0, 0, 0.1);
@@ -38,12 +38,16 @@ header{
 
 .logo::after{
     content: "";
-    width: 70rem;
+    width: 500%;
     height: 0.5rem;
     background: var(--logo-line-color);
     position: absolute;
     top: -15%;
-    left: -110%;
+    left: -200%;
+}
+
+.logo::after:hover{
+    cursor: default;
 }
 
 
@@ -56,4 +60,12 @@ main{
     background: var(--main-background);
     height: 80vh;
 
+}
+
+.page{
+    display: none;
+}
+
+.page:nth-of-type(1){
+    display: flex;
 }
