@@ -1,0 +1,17 @@
+.info{
+    min-height: calc(100vh - 18rem);
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    &__textWrapper{
+
+    }
+
+    &__text{
+        font-size: 2rem;
+        color: #5a8989;
+    }
+}
