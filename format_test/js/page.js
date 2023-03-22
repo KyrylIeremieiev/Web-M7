@@ -6,6 +6,7 @@ class Main{
         this.page = page;
         this.htmlForward = htmlForward;
         this.htmlBackward = htmlBackward;
+        
 
         this.styleChange = new StyleChange(this.page);
         this.htmlForward.onclick = this.styleChange.forward;
