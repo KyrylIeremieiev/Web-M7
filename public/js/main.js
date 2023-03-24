@@ -1,11 +1,15 @@
 class App{
     jsonFile
+    htmlNomering
     htmlElementTxt
-    htmlElementBtn
-    constructor(jsonFile, htmlElementTxt, htmlElementBtn){
+    htmlElementForward
+    htmlElementBackward
+    constructor(jsonFile, htmlNomering, htmlElementTxt, htmlElementForward, htmlElementBackward){
         this.jsonFile = jsonFile;
+        this.htmlNomering = htmlNomering;
         this.htmlElementTxt = htmlElementTxt;
-        this.htmlElementBtn = htmlElementBtn;
+        this.htmlElementForward = htmlElementForward;
+        this.htmlElementBackward = htmlElementBackward;
         this.readJson();
     }
 
@@ -21,36 +25,51 @@ class App{
 
     ObjectCreator(){
   
-        const transition = new Transition(this.htmlElementTxt, this.htmlElementBtn, this.data);
+        const transition = new Transition(this.htmlNomering, this.htmlElementTxt, this.htmlElementForward, this.htmlElementBackward, this.data);
     }
 }
 
 class Transition{
+    htmlNomering;
     htmlElementTxt;    
-    htmlElementBtn;
+    htmlElementForward;
+    htmlElementBackward
     data;
     currentPage;
-    constructor(htmlElementTxt, htmlElementBtn, data){
+    constructor(htmlNomering, htmlElementTxt, htmlElementForward, htmlElementBackward, data){
+        this.htmlNomering = htmlNomering;
         this.htmlElementTxt = htmlElementTxt;
-        this.htmlElementBtn = htmlElementBtn;
+        this.htmlElementForward = htmlElementForward;
+        this.htmlElementBackward = htmlElementBackward;
         this.data = data;
         this.currentPage = 0
 
-        this.htmlElementBtn.onclick = this.ButtonClickedForward;
+        this.Render();
+        this.htmlElementForward.onclick = this.ButtonClickedForward;
+        this.htmlElementBackward.onclick = this.ButtonClickedBackward;
     }
 
     ButtonClickedForward = () =>{
-        console.log(this.data);
-        this.currentPage += 1;
-        this.Render();
+        if(this.currentPage < this.data[0].question.length-1){
+            this.currentPage += 1;
+            this.Render();
+        }
+    }
+
+    ButtonClickedBackward = () =>{
+        if(this.currentPage > 0){
+            this.currentPage -= 1;
+            this.Render();
+        }
     }
 
     Render(){
-        this.htmlElementTxt.innerText = this.data[0].question[this.currentPage];        
+        this.htmlElementTxt.innerText = this.data[0].question[this.currentPage];
+        this.htmlNomering.innerText = "Vraag: " + parseInt(this.currentPage + 1)       
     }
     
 
 }
 
 
-let app = new App("/public/js/loopbaanAnkers.json", document.getElementById("js--txt"), document.getElementById("js--btn"))
+let app = new App("/public/js/loopbaanAnkers.json", document.getElementById("js--beweringNomering"), document.getElementById("js--bewering"), document.getElementById("js--forward"), document.getElementById("js--backward"))
