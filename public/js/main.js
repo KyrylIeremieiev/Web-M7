@@ -24,7 +24,6 @@ class App{
     }
 
     ObjectCreator(){
-  
         const transition = new Transition(this.htmlNomering, this.htmlElementTxt, this.htmlElementForward, this.htmlElementBackward, this.data);
     }
 }
