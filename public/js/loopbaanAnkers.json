@@ -1,85 +1,85 @@
 [
     {
-        "question": [
-            "Ik droom ervan zo goed te zijn in wat ik doe dat er voortdurend om mijn deskundige advies wordt gevraagd",
+        "question": {
+            "Ik droom ervan zo goed te zijn in wat ik doe dat er voortdurend om mijn deskundige advies wordt gevraagd":"TF",
 
-            "Ik heb de meeste voldoening in mijn werk wanneer ik de inspanningen van anderen heb kunnen verenigen en managen",
+            "Ik heb de meeste voldoening in mijn werk wanneer ik de inspanningen van anderen heb kunnen verenigen en managen":"AM",
 
-            "Ik droom ervan een loopbaan te hebben waarin ik vrij ben een taak op mijn manier en volgens mijn eigen schema uit te voeren",
+            "Ik droom ervan een loopbaan te hebben waarin ik vrij ben een taak op mijn manier en volgens mijn eigen schema uit te voeren":"AU",
 
-            "Ik vind zekerheid en stabiliteit belangrijker dan vrijheid en autonomie",
+            "Ik vind zekerheid en stabiliteit belangrijker dan vrijheid en autonomie":"ZE",
 
-            "Ik ben altijd op zoek naar ideeen waardoor ik mijn eigen bedrijf zou kunnen beginnen",
+            "Ik ben altijd op zoek naar ideeen waardoor ik mijn eigen bedrijf zou kunnen beginnen":"OC",
 
-            "Alleen als ik het gevoel heb een daadwerkelijke bijdrage geleverd te hebben aan het maatschappelijke welzijn, voel ik mij geslaagd in mijn loopbaan",
+            "Alleen als ik het gevoel heb een daadwerkelijke bijdrage geleverd te hebben aan het maatschappelijke welzijn, voel ik mij geslaagd in mijn loopbaan":"DV",
 
-            "Ik droom van een loopbaan waarin ik problemen kan oplossen of zeer uidagende situaties het hoofd kan bieden",
+            "Ik droom van een loopbaan waarin ik problemen kan oplossen of zeer uidagende situaties het hoofd kan bieden":"UI",
 
-            "Ik zou nog eerder weggaan bij het bedrijf waar ik werk dan een baan accepteren die het mij onmogelijk maakt persoonlijke en gezinstaken na te streven",
+            "Ik zou nog eerder weggaan bij het bedrijf waar ik werk dan een baan accepteren die het mij onmogelijk maakt persoonlijke en gezinstaken na te streven":"LS",
 
-            "Ik voel mij alleen geslaagd in mijn loopbaan als ik mijn technische of functionele vaardigheden tot een zeer hoog competentieniveau kan ontwikkelen",
+            "Ik voel mij alleen geslaagd in mijn loopbaan als ik mijn technische of functionele vaardigheden tot een zeer hoog competentieniveau kan ontwikkelen":"TF",
 
-            "Ik droom ervan aan het hoofd van een complexe organisatie en beslissingen te nemen die veel mensen beinvloeden",
+            "Ik droom ervan aan het hoofd van een complexe organisatie en beslissingen te nemen die veel mensen beinvloeden":"AM",
 
-            "Ik heb de meeste voldoening van mijn werk wanneer ik volledig vrij ben te bepalen van mijn eigen taken, schema's en procedures",
+            "Ik heb de meeste voldoening van mijn werk wanneer ik volledig vrij ben te bepalen van mijn eigen taken, schema's en procedures":"AU",
 
-            "Ik zou nog eerder weggaan bij het bedrijf waar ik werk dan een taak te accepteren die mijn zekerheid in de organisatie in gevaar zou brengen",
+            "Ik zou nog eerder weggaan bij het bedrijf waar ik werk dan een taak te accepteren die mijn zekerheid in de organisatie in gevaar zou brengen":"ZE",
 
-            "Ik vind het opbouwern van mijn eigen bedrijf belangrijker dan het bereiken van een hoge managementpositie in de organisatie van iemand anders",
+            "Ik vind het opbouwern van mijn eigen bedrijf belangrijker dan het bereiken van een hoge managementpositie in de organisatie van iemand anders":"OC",
 
-            "Ik heb de meeste voldoening van mijn werk wanneer ik mijn talenten in diesnt van anderen heb kunnen gebruiken",
+            "Ik heb de meeste voldoening van mijn werk wanneer ik mijn talenten in diesnt van anderen heb kunnen gebruiken":"DV",
 
-            "Ik voel me alleen geslaagd in mijn loopbaan als ik te maken heb met zeer moeilijke uitdaginen en deze het hoofd kan bieden",
+            "Ik voel me alleen geslaagd in mijn loopbaan als ik te maken heb met zeer moeilijke uitdaginen en deze het hoofd kan bieden":"UI",
 
-            "Ik droom van een loopbaan waarin ik mijn persoonlijke, gezings- en arbeidsbehoeten kan verenigen",
+            "Ik droom van een loopbaan waarin ik mijn persoonlijke, gezings- en arbeidsbehoeten kan verenigen":"LS",
 
-            "Ik vind het aantrekkelijker een hogere functionele manager op mijn competentieterrein te worden dan een alegemeen manager",
+            "Ik vind het aantrekkelijker een hogere functionele manager op mijn competentieterrein te worden dan een alegemeen manager":"TF",
 
-            "Ik voel me alleen geslaagd in mijn loopbaan als ik alegemeen manager in een organisatie word",
+            "Ik voel me alleen geslaagd in mijn loopbaan als ik alegemeen manager in een organisatie word":"AM",
 
-            "Ik voel me alleen geslaagd in mijn loopbaan als ik volledige autonomie en vrijheid verwerf",
+            "Ik voel me alleen geslaagd in mijn loopbaan als ik volledige autonomie en vrijheid verwerf":"AU",
 
-            "Ik zoek een baan in een organisatie die mij een gevoel van zekergeid en stabiliteit geeft",
+            "Ik zoek een baan in een organisatie die mij een gevoel van zekergeid en stabiliteit geeft":"ZE",
 
-            "Ik heb de meeste voldoening van mijn werk wanneer ik iets heb kunnen opbouwen wat volledig het resultaat van mijn eigen ideeen en inspanningen",
+            "Ik heb de meeste voldoening van mijn werk wanneer ik iets heb kunnen opbouwen wat volledig het resultaat van mijn eigen ideeen en inspanningen":"OC",
 
-            "Ik vind het belangrijker mijn vaardigheden te gebruiken om de wereld aantrekkelijker te maken om in te wonen en te werken dan een hoge managementpositie te bereiken",
+            "Ik vind het belangrijker mijn vaardigheden te gebruiken om de wereld aantrekkelijker te maken om in te wonen en te werken dan een hoge managementpositie te bereiken":"DV",
 
-            "Ik heb de meeste voldiening van mijn werk wanneer ik ogenschijnlijk onoplosbare problemen heb opgelost of ogenschijnlijk onmogelijke tegenslagen heb overwonnen",
+            "Ik heb de meeste voldiening van mijn werk wanneer ik ogenschijnlijk onoplosbare problemen heb opgelost of ogenschijnlijk onmogelijke tegenslagen heb overwonnen":"UI",
 
-            "Ik voel me alleen geslaagd in mijn leven als ik mijn persoonlijke-, gezijns- en loopbaaneisen met elkaar in evenwicht kan brengen",
+            "Ik voel me alleen geslaagd in mijn leven als ik mijn persoonlijke-, gezijns- en loopbaaneisen met elkaar in evenwicht kan brengen":"LS",
 
-            "Ik zou nog eerder weggaan bij het bedrijf waar ik werk dan een taakroulatie te accepteren waardoor ik mijn competentieterrein zou moeten verlaten",
+            "Ik zou nog eerder weggaan bij het bedrijf waar ik werk dan een taakroulatie te accepteren waardoor ik mijn competentieterrein zou moeten verlaten":"TF",
 
-            "Ik vind het aantrekkelijker algemeen manager te worden dan een hoge functionele manager op mijn huidige competentieterrein",
+            "Ik vind het aantrekkelijker algemeen manager te worden dan een hoge functionele manager op mijn huidige competentieterrein":"AM",
             
-            "Een taak op mijn eigen manier doen, vrij van relgels en beperkingen, vind ik belangrijker dan zekerheid",
+            "Een taak op mijn eigen manier doen, vrij van relgels en beperkingen, vind ik belangrijker dan zekerheid":"AU",
 
-            "Ik heb de meeste volgoening van mijn werk wanneer ik weet dat ik vollgedige financiele zekerheid heb en zeker ben van mijn baan",
+            "Ik heb de meeste volgoening van mijn werk wanneer ik weet dat ik vollgedige financiele zekerheid heb en zeker ben van mijn baan":"ZE",
 
-            "Ik voel me alleen geslaagd in mijn loopbaan als het me gelukt is iets te creeren of op te bouwen wat vollgedig mijn eigen product of idee is",
+            "Ik voel me alleen geslaagd in mijn loopbaan als het me gelukt is iets te creeren of op te bouwen wat vollgedig mijn eigen product of idee is":"OC",
 
-            "Ik droom van een loopbaan die daadwerkelijk een bijdrage levert aan de mensheid en de maatschappij",
+            "Ik droom van een loopbaan die daadwerkelijk een bijdrage levert aan de mensheid en de maatschappij":"DV",
 
-            "Ik zoek naar kansen op het werk die in sterken mate een uitdaging vormen voor mijn proleemoplssende en/of prestatiegerichte vaardigheden",
+            "Ik zoek naar kansen op het werk die in sterken mate een uitdaging vormen voor mijn proleemoplssende en/of prestatiegerichte vaardigheden":"UI",
 
-            "Ik vind het belangrijker de eisen van mijn persoonlijke en beroepsleven met elkaar in evenwicht te brengen dan een hoge managmentpositie te bereiken",
+            "Ik vind het belangrijker de eisen van mijn persoonlijke en beroepsleven met elkaar in evenwicht te brengen dan een hoge managmentpositie te bereiken":"LS",
 
-            "Ik heb de meeste voldoening van mijn werk wanneer ik mijn speciale vaardigheden en talenten kan gebruiken",
+            "Ik heb de meeste voldoening van mijn werk wanneer ik mijn speciale vaardigheden en talenten kan gebruiken":"TF",
 
-            "Ik zou nog eerder weggaan bij het bedrijf waar ik werk dan een baan te accepteren waardoor ik van het algemeen-managementspoor zou afdrwalen",
+            "Ik zou nog eerder weggaan bij het bedrijf waar ik werk dan een baan te accepteren waardoor ik van het algemeen-managementspoor zou afdrwalen":"AM",
 
-            "Ik zou nog eerder weggaan bij het bedrijf waar ik werk dan een baan te accepteren waardoor mijn autonomie en vrijheid zouden verminderen",
+            "Ik zou nog eerder weggaan bij het bedrijf waar ik werk dan een baan te accepteren waardoor mijn autonomie en vrijheid zouden verminderen":"AU",
 
-            "Ik droom van een loopbaan waarin ik een gevoel van zekerheid en stabiliteit ervaar",
+            "Ik droom van een loopbaan waarin ik een gevoel van zekerheid en stabiliteit ervaar":"ZE",
 
-            "Ik droom ervan mijn eigen bedrijf te beginnen en op te bouwem",
+            "Ik droom ervan mijn eigen bedrijf te beginnen en op te bouwem":"OC",
             
-            "Ik zou nog eerder weggaan bij het berijf waar ik werk dan een taak te accepteren waardoor ik anderen minder goed van dienst zou kunnen zijn",
+            "Ik zou nog eerder weggaan bij het berijf waar ik werk dan een taak te accepteren waardoor ik anderen minder goed van dienst zou kunnen zijn":"DV",
 
-            "Ik vind het belangrijker aan vijwel onoplosbare problemen te werken dan een hoge managementpositie te bereiken",
+            "Ik vind het belangrijker aan vijwel onoplosbare problemen te werken dan een hoge managementpositie te bereiken":"UI",
 
-            "Ik heb altijd gezocht naar werk dat zo min mogelijk invloed heeft io mijn persoonlijke of gezinstaken"
-        ]
+            "Ik heb altijd gezocht naar werk dat zo min mogelijk invloed heeft io mijn persoonlijke of gezinstaken":"LS"
+        }
     }
 ]

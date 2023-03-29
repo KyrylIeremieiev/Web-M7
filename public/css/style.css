@@ -145,7 +145,7 @@ body {
 }
 .vragen__scoreButtonList {
   width: 100%;
-  display: grid;
+  display: none;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 .vragen__scoreButtonListItem {
