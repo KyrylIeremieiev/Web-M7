@@ -6,7 +6,9 @@ class App{
     htmlElementBackward
     htmlScoreButtonsWrap
     htmlScoreButton
-    constructor(jsonFile, htmlNomering, htmlElementTxt, htmlElementForward, htmlElementBackward, htmlScoreButtonsWrap, htmlScoreButton){
+    constructor(jsonFile, htmlNomering, htmlElementTxt, htmlElementForward, 
+        htmlElementBackward, htmlScoreButtonsWrap, htmlScoreButton,
+        progressBar){
         this.jsonFile = jsonFile;
         this.htmlNomering = htmlNomering;
         this.htmlElementTxt = htmlElementTxt;
@@ -14,6 +16,7 @@ class App{
         this.htmlElementBackward = htmlElementBackward;
         this.htmlScoreButtonsWrap = htmlScoreButtonsWrap;
         this.htmlScoreButton = htmlScoreButton;
+        this.progressBar = progressBar;
         this.readJson();
     }
 
@@ -30,30 +33,31 @@ class App{
 
     HtmlCreator(){
         //Breekt de hele website, wil niet meet laden
-        /* for(let i = 0; i < 39; i++){
-            for(let x = 0; x < 6; i++){
-                this.htmlScoreButton = document.createElement("label");
-                this.htmlScoreButton.setAttribute("type", "radio")
-                this.htmlScoreButton.setAttribute("name", "InputButtonRadio"+i)
-                this.htmlScoreButton.setAttribute("class", "vragen__scoreButton js--scoreButtons")
+/*          for(let i = 0; i < 39; i++){
+                for(let x = 0; x < 6; i++){
+                    this.htmlScoreButton = document.createElement("label");
+                    this.htmlScoreButton.setAttribute("type", "radio")
+                    this.htmlScoreButton.setAttribute("name", "InputButtonRadio"+i)
+                    this.htmlScoreButton.setAttribute("class", "vragen__scoreButton js--scoreButtons")
 
-                this.htmlScoreLi = document.createElement("li");
-                this.htmlScoreLi.classList = "vragen__scoreButtonListItem"
-                this.htmlScoreLi.appendChild(this.htmlScoreButton);
-            }
+                    this.htmlScoreLi = document.createElement("li");
+                    this.htmlScoreLi.classList = "vragen__scoreButtonListItem"
+                    this.htmlScoreLi.appendChild(this.htmlScoreButton); 
+                }
 
             this.htmlScoreButtonsWrap = document.createElement("ul");
             this.htmlScoreButtonsWrap.classList = "vragen__scoreButtonList";
             this.htmlScoreButtonsWrap.appendChild(this.htmlScoreLi);
 
             document.getElementById("js--vragen").appendChild(this.htmlScoreButtonsWrap);
-        } */
+        }  */
     }
 
     ObjectCreator(){
         this.valueCounter = new ValueCounter(this.data,this.htmlScoreButton);
         this.transition = new Transition(this.htmlNomering, this.htmlElementTxt, this.htmlElementForward, 
-        this.htmlElementBackward, this.htmlScoreButtonsWrap, this.data);
+        this.htmlElementBackward, this.htmlScoreButtonsWrap, this.data,
+        this.progressBar);
     }
 }
 
@@ -63,16 +67,23 @@ class Transition{
     htmlElementForward;
     htmlElementBackward
     data;
+    currentProgress;
+    progressBar;
     currentPage;
     GoBack;
     GoForward;
-    constructor(htmlNomering, htmlElementTxt, htmlElementForward, htmlElementBackward,htmlScoreButtonsWrap, data){
+    constructor(htmlNomering, htmlElementTxt, htmlElementForward, htmlElementBackward,htmlScoreButtonsWrap, data, progressBar){
         this.htmlNomering = htmlNomering;
         this.htmlElementTxt = htmlElementTxt;
         this.htmlElementForward = htmlElementForward;
         this.htmlElementBackward = htmlElementBackward;
         this.htmlScoreButtonsWrap = htmlScoreButtonsWrap;
         this.data = data;
+
+        this.currentProgress = 0;
+        this.progressBar = progressBar;
+        this.progressBar.style.width = 0
+
         this.currentPage = 0;
         this.Question = Object.keys(this.data[0].question);
 
@@ -88,6 +99,9 @@ class Transition{
             this.GoBack=false;
             this.GoForward=true;
 
+            this.progressBar.style.width = this.currentProgress + 100 / this.Question.length + "%";
+            this.currentProgress = this.currentProgress + 100 / this.Question.length;
+
             this.Render();
             app.valueCounter.valueCases(this.currentPage);
         }
@@ -99,6 +113,9 @@ class Transition{
             
             this.GoBack=true;
             this.GoForward=false;
+
+            this.progressBar.style.width = this.currentProgress - 100 / this.Question.length + "%";
+            this.currentProgress = this.currentProgress - 100 / this.Question.length;
 
             this.Render();
         }
@@ -176,7 +193,7 @@ class ValueCounter{
     }
 
     AssignValue(){
-        
+        console.log(this.htmlScoreButton);
     }
 }
 
@@ -184,4 +201,4 @@ class ValueCounter{
 let app = new App("/public/js/loopbaanAnkers.json", document.getElementById("js--beweringNomering"), 
 document.getElementById("js--bewering"), document.getElementById("js--forward"), 
 document.getElementById("js--backward"), document.getElementsByClassName("vragen__scoreButtonList"), 
-document.getElementsByClassName("js--scoreButtons"));
+document.getElementsByClassName("js--scoreButtons"), document.getElementById("js--progressBar"));
