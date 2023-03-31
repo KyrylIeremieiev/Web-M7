@@ -64,7 +64,10 @@
         }
     }
 
-   
+    &__scoreButtonListWrapper{
+        width: 100%;
+        height: 100%;
+    }
 
     &__scoreButtonList{
         width: 100%;
@@ -81,6 +84,8 @@
         }
 
     }
+
+   
 
     &__scoreButton{
         width: 3rem;
