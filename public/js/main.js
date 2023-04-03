@@ -252,8 +252,14 @@ class ValueCounter{
     }
 
     TenthBtnBLock(){
-        if(this.htmlScoreButtonsWrap[this.currentPage].children[6].children[0].checked){
-            this.htmlScoreButtonsWrap[this.currentPage].children[6].children[0].checked = false
+        for(let i = 0; i < this.htmlScoreButton.length; i++){
+            if (this.htmlScoreButton[i].value == 10){
+                this.htmlScoreButton[i].disabled = 'disabled';
+                /* 
+                for reverance, if you need to turn the input back on
+                this.htmlScoreButton[i].removeAttribute("disabled"); 
+                */
+            }
         }
     }
 }
