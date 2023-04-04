@@ -55,7 +55,6 @@ class App{
 
                     //makes array of all buttons
                     this.htmlScoreButtonArr.push(this.htmlScoreButton);
-                    console.log(this.htmlScoreButton)
                     this.htmlScoreButtonsWrap.appendChild(this.htmlScoreLi);
                 }
 
@@ -65,11 +64,9 @@ class App{
            document.getElementById("js--receiver").appendChild(this.htmlScoreButtonsWrap);
 
         }  
-
     }
 
     ObjectCreator(){
-        console.log(this.htmlScoreButtonsWrapArr)
         this.valueCounter = new ValueCounter(this.data,this.htmlScoreButtonArr, this.htmlScoreButtonsWrapArr);
         this.transition = new Transition(this.htmlNomering, this.htmlElementTxt, this.htmlElementForward, 
         this.htmlElementBackward, this.htmlScoreButtonsWrapArr, this.data, this.progressBar);
@@ -119,6 +116,9 @@ class Transition{
 
             this.Render();
             app.valueCounter.AssignValue(this.currentPage);
+        }
+        else{
+            tie.GoToEnd();
         }
     }
 
@@ -213,9 +213,25 @@ class ValueCounter{
                 break;
         }
         this.Lockout()
+        this.resultCheck()
+    }
+
+    resultCheck(){
+        if(this.currentPage >= 39){
+            this.chart = new Charts(           
+            this.TF,
+            this.AM,
+            this.AU,
+            this.ZE,
+            this.OC,
+            this.DV,
+            this.UI,
+            this.LS)
+        }
     }
 
     AssignValue(currentPage){
+        this.InputChecked = 0;
         this.currentPage = currentPage
         this.currentInputButtons = []
         //I have no clue why this works, I have no clue why it has to loop 8 times to log 7 buttons, but it works.
@@ -230,6 +246,17 @@ class ValueCounter{
                     this.maxChosen+=1
                 }
                 this.factor = this.currentInputButtons[y].value;
+            }
+        }
+
+        //makes sure that the factor is reverted if none are selected
+        for(let y = 0; y < this.currentInputButtons.length; y++){
+            if(this.currentInputButtons[y].checked == false){
+                this.InputChecked += 1;
+            }
+            //this is the easiest way i could think of. Might clean up the code later
+            if(this.InputChecked == 7){
+                this.factor = 0
             }
         }
         this.valueCases();
@@ -264,7 +291,85 @@ class ValueCounter{
     }
 }
 
+class Charts{
+    constructor(tf, am, au, ze, oc, dv, ui, ls){
+        this.TF = tf;
+        this.AM = am;
+        this.AU = au;
+        this.ZE = ze;
+        this.OC = oc;
+        this.DV = dv;
+        this.UI = ui;
+        this.LS = ls;
 
-let app = new App("/public/js/loopbaanAnkers.json", document.getElementById("js--beweringNomering"), 
+        this.CreateChart();
+    }
+
+    CreateChart(){
+        this.results = document.getElementById("js--results");
+
+         const ctx = document.getElementById('myChart');
+
+         new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['TF', 'AM', 'AU', 'ZE', 'OC', 'DV', 'UI', 'LS'],
+                datasets: [{
+                    label: '# of Points',
+                    data: [this.TF,
+                        this.AM,
+                        this.AU,
+                        this.ZE,
+                        this.OC,
+                        this.DV,
+                        this.UI,
+                        this.LS,],
+                    borderWidth: 1
+                }]
+        
+            },
+            //options: {
+            //  scales: {
+            //    y: {
+            //    beginAtZero: true
+            //}
+            //}
+            //}
+        });
+    }
+}
+class TieTogether{
+    htmlStartSection
+    htmlFormSection
+    htmlResultSection
+
+    constructor(htmlStartSection, htmlFormSection, htmlResultSection, htmlStartButton){
+        this.htmlStartSection = htmlStartSection;
+        this.htmlFormSection = htmlFormSection;
+        this.htmlResultSection = htmlResultSection;
+        this.htmlStartButton = htmlStartButton;
+
+        //reset display
+        this.htmlStartSection.style.display = "flex"
+        this.htmlFormSection.style.display = "none"
+        this.htmlResultSection.style.display = "none"
+
+        this.htmlStartButton.onclick = this.GoToForm;
+    }
+
+    GoToForm = () =>{
+        this.htmlStartSection.style.display = "none";
+        this.htmlFormSection.style.display = "flex";
+    }
+
+    GoToEnd(){
+        this.htmlFormSection.style.display = "none";
+        this.htmlResultSection.style.display = "flex";
+    }
+}
+let tie = new TieTogether(document.getElementById("js--infoSection"), document.getElementById("js--vragen"), 
+document.getElementById("js--resultSection"), document.getElementById("js--startBtn"));
+
+let app = new App("/js/loopbaanAnkers.json", document.getElementById("js--beweringNomering"), 
 document.getElementById("js--bewering"), document.getElementById("js--forward"), 
 document.getElementById("js--backward"), document.getElementById("js--progressBar"));

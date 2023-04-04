@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loopbaanankers (Schein)</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="js/main.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +19,7 @@
         </figure>
     </header>
 
-    <!-- <section class="info">
+    <section class="info" id="js--infoSection">
         <article class="info__textWrapper">
             <h2 class="info__text">
                 Je zal zomenteen de Vragenlijst van Loopbaanankers (Schein)
@@ -33,8 +34,8 @@
                 staan over de test Hier komt informatie te staan over de test
             </h2>
         </article>
-        <button class="info__startButton">Start de Test</button>
-    </section> -->
+        <button class="info__startButton" id="js--startBtn">Start de Test</button>
+    </section> 
 
     <section class="vragen" id="js--vragen">
         <div class="vragen__vraagNummerWrapper">
@@ -72,9 +73,6 @@
             </li>
         </ul>
 
-        <!-- Hier eindig je de test en lever je het in -->
-        <!-- <h2 class="vragen_vraag" id="">Je bent helemaal klaar!</h2>
-        <button class="info__startButton">Inleveren</button> -->
 
         <!-- Begin Input, Dit is een lange! Warning: Unholy 
         De Div heeft geen gebruikelijke reden, het enige doel dat het heeft is om al dat shit te kunnen inklappen.
@@ -94,10 +92,17 @@
             <div class="vragen__progBarFill" id="js--progressBar"></div>
         </div>
         <p class="vragen__info">Je mag op 3 vragen die van jou het meest van toepassing zijn 10 punten geven</p>
-    </section>  
+    </section>
 
-    <!-- <section class="results">
-        <figure class="results__chart"></figure>
+<!--     <section class="inleveren">
+        <h2 class="vragen_vraag" id="">Je bent helemaal klaar!</h2>
+        <button class="info__startButton">Inleveren</button>
+    </section> -->
+
+    <section class="results" id="js--resultSection">
+        <figure class="results__chart">
+            <canvas id="myChart"></canvas>
+        </figure>
         <h2 class="results__infoText">
             Hieronder staan korte omschrijvingen van de ankers die je kan lezen.
             Kijk wat jij hiervan herkent.
@@ -232,7 +237,7 @@
             </p>
         </article>
 
-    </section> -->
+    </section>
 
 </body>
 </html>
