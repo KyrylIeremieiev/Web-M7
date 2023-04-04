@@ -1,0 +1,62 @@
+@media screen and (max-width: 81.25rem) {
+
+    .vragen{
+        width: 70vw;
+        margin-top: 2rem;
+    }
+
+}
+
+@media screen and (max-width: 62.5rem) {
+
+    .info{
+        width: 80vw;
+    }
+}
+
+@media screen and (max-width: 56.25rem) {
+
+    body{
+        overflow-x: hidden;
+    }
+
+    .vragen{
+        width: 90vw;
+
+        &__vraag{
+            font-size: 100%;
+        }
+
+        &__scoreList{
+            width: 100%;
+            display: grid;
+
+        }
+
+        &__progBar{
+            width: 90%;
+        }
+
+
+        &__navButtons{
+            width: 100%;
+        }
+            
+    }
+
+    .info{
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+        width: 90vw;
+    }
+
+    .results{
+        width: 80vw;
+    }
+
+
+}
+
+
+
+
