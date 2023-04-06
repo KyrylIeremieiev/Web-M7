@@ -1,19 +1,7 @@
 class App{
     jsonFile
-    htmlNomering
-    htmlElementTxt
-    htmlElementForward
-    htmlElementBackward
-    htmlScoreButtonsWrap
-    htmlScoreButton
-    constructor(jsonFile, htmlNomering, htmlElementTxt, htmlElementForward, 
-        htmlElementBackward, progressBar){
+    constructor(jsonFile){
         this.jsonFile = jsonFile;
-        this.htmlNomering = htmlNomering;
-        this.htmlElementTxt = htmlElementTxt;
-        this.htmlElementForward = htmlElementForward;
-        this.htmlElementBackward = htmlElementBackward;
-        this.progressBar = progressBar;
         this.readJson();
     }
 
@@ -109,6 +97,7 @@ class Transition{
             this.currentProgress = this.currentProgress - 100 / this.Question.length;
 
             this.Render();
+            app.valueCounter.ReverseValueCases(this.currentPage)
         }
     }
 
@@ -192,6 +181,37 @@ class ValueCounter{
         this.resultCheck()
     }
 
+    //this is incase somebody tries to go to previous questions, so that you dont assign value extra
+    ReverseValueCases(currentPage){
+        this.currentPage = currentPage;
+        switch(this.Value[this.currentPage]){
+            case "TF":
+                this.TF-=parseInt(this.factor);
+                break;
+            case "AM":
+                this.AM-=parseInt(this.factor);
+                break;
+            case "AU":
+                this.AU-=parseInt(this.factor);
+                break;
+            case "ZE":
+                this.ZE-=parseInt(this.factor);
+                break;
+            case "OC":
+                this.OC-=parseInt(this.factor);
+                break;
+            case "DV":
+                this.DV-=parseInt(this.factor);
+                break;
+            case "UI":
+                this.UI-=parseInt(this.factor);
+                break;
+            case "LS":
+                this.LS-=parseInt(this.factor);
+                break;
+        }
+    }
+
     resultCheck(){
         if(this.currentPage >= 39){
             this.chart = new Charts(           
@@ -216,14 +236,18 @@ class ValueCounter{
             this.currentInputButtons.push(this.htmlScoreButton[this.currentPage*7+i-7])
         }
 
-        for(let y = 0; y < this.currentInputButtons.length; y++){
-            if(this.currentInputButtons[y].checked){
-                if(this.currentInputButtons[y].value == 10){
-                    this.maxChosen+=1
-                }
-                this.factor = this.currentInputButtons[y].value;
+        //anytime you go forward it checks how many 10 value buttons are clicked, and adds +1 for each to this.maxChosen
+        for(let y = 0; y < this.htmlScoreButton.length; y++){
+            if(this.htmlScoreButton[y].checked && this.htmlScoreButton[y].value == 10){
+                this.maxChosen+=1;
             }
         }
+
+        for(let y = 0; y < this.currentInputButtons.length; y++){
+            if(this.currentInputButtons[y].checked){
+                this.factor = this.currentInputButtons[y].value;
+            }
+        } 
 
         //makes sure that the factor is reverted if none are selected
         for(let y = 0; y < this.currentInputButtons.length; y++){
@@ -238,6 +262,7 @@ class ValueCounter{
         this.valueCases();
     }
 
+
     Lockout(){
         this.labelLi = document.getElementById("js--tenthBtnLi")
         this.label = document.getElementById("js--tenthBtnLabel")
@@ -247,11 +272,14 @@ class ValueCounter{
             this.label.style.color = "#C0C0C0"
             this.initInterval();
         }
+        else{
+            //this is mandatory, because of the way line 239-244 works
+            this.maxChosen = 0
+        }
     }
 
     initInterval(){
-        let scope = this
-        setInterval(function () {scope.TenthBtnBLock()}, 33);
+        this.TenthBtnBLock()
     }
 
     TenthBtnBLock(){
@@ -667,6 +695,4 @@ class CreateQuestion{
 
 }
 
-let app = new App("/js/loopbaanAnkers.json", document.getElementById("js--beweringNomering"), 
-document.getElementById("js--bewering"), document.getElementById("js--forward"), 
-document.getElementById("js--backward"), document.getElementById("js--progressBar"));
+let app = new App("/js/loopbaanAnkers.json");
