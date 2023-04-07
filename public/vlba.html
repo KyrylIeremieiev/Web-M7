@@ -6,17 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loopbaanankers (Schein)</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/main.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/js/main.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="banner">
+    <!-- <header class="banner">
         <figure class="banner__logo">
             <img src="img/site-logo-2.png" alt="" class="banner__logoImage">
         </figure>
-    </header>
+    </header> -->
 
     <!-- <section class="info">
         <article class="info__textWrapper">
@@ -68,15 +69,15 @@
             </li>
             <li class="vragen__scoreListItem" id="js--tenthBtnLi">
                 <label for="InputTenthRadio" class="vragen__scoreListP" id="js--tenthBtnLabel">10</label>
-            </li> -->
-        </ul>
+            </li>
+        </ul> -->
 
-        <!-- Hier eindig je de test en lever je het in -->
-        <h2 class="vragen__vraag" id="">Je bent helemaal klaar!</h2>
+        <!-- Hier eindig je de test en lever je het in --> 
+        <!-- <h2 class="vragen__vraag" id="">Je bent helemaal klaar!</h2>
         <div class="vragen__finishButtonWrapper">
             <button class="info__startButton vragen__finishButton">Ga terug</button>
             <button class="info__startButton vragen__finishButton vragen__finishButton--right">Inleveren</button>
-        </div>
+        </div> -->
         
 
         <!-- Begin Input, Dit is een lange! Warning: Unholy 
@@ -86,22 +87,25 @@
 
 
         <!-- De div is nodig voor de plaatsing van elementen -->
-        <div id="js--receiver" style="height: 100%; width: 100%;"></div>
+        <!-- <div id="js--receiver" style="height: 100%; width: 100%;"></div>
 
-        <!-- <div class="vragen__navButtons">
+        <div class="vragen__navButtons">
             <button class="vragen__navButton" id="js--backward"> &lt; </button>
             <button class="vragen__navButton" id="js--forward"> &gt; </button>
-        </div> -->
+        </div>
 
-        <!-- <div class="vragen__progBar">
+        <div class="vragen__progBar">
             <div class="vragen__progBarFill" id="js--progressBar"></div>
-        </div> -->
-        <!-- <p class="vragen__info">Je mag op 3 vragen die van jou het meest van toepassing zijn 10 punten geven</p> -->
-    </section> 
+        </div>
+        <p class="vragen__info">Je mag op 3 vragen die van jou het meest van toepassing zijn 10 punten geven</p> -->
 
-    <!--
-    <section class="results">
-        <figure class="results__chart"></figure>
+    </section>
+ 
+
+    <!-- <section class="results" id="js--resultSection">
+        <figure class="results__chart">
+            <canvas id="myChart"></canvas>
+        </figure>
         <h2 class="results__infoText">
             Hieronder staan korte omschrijvingen van de ankers die je kan lezen.
             Kijk wat jij hiervan herkent.
@@ -236,7 +240,7 @@
             </p>
         </article>
 
-    </section> -->
+    </section>  -->
 
 </body>
 </html>
