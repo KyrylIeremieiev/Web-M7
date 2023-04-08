@@ -420,6 +420,7 @@ class CreateHtml{
         this.header = new CreateHeader();
         this.info = new CreateInfo();
         this.questions = new CreateQuestion();
+        this.results = new CreateResult();
     }
 }
 
@@ -693,6 +694,274 @@ class CreateQuestion{
         document.getElementsByTagName("body")[0].appendChild(this.VraagSection);
     }
 
+}
+
+class CreateResult{
+    constructor(){
+        this.createResult();
+    }
+//  example of html
+/*  <section class="results" id="js--resultSection">
+        <figure class="results__chart">
+            <canvas id="myChart"></canvas>
+        </figure>
+        <h2 class="results__infoText">
+            Hieronder staan korte omschrijvingen van de ankers die je kan lezen.
+            Kijk wat jij hiervan herkent.
+
+        </h2>
+        <article class="results__explanation">
+            <h2 class="results__explanationTitle">
+                Technisch/functioneel (TF)
+            </h2>
+            <p class="results__explanationText">
+                Mensen met dit anker kenmerken zich door hun kennis, vaardigheden
+                of "ambachtelijkheid" op een bepaald gebied. Zij zoeken voortdurend naar
+                nieuwe uitdagingen op hun specifieke vakgebied, zodat zij zich voortdurend kunnen
+                ontwikkelen naar een hoger niveau. Zij ontlenen hun identiteit aan het uitoefenen en 
+                toepassen van hun specifieke kennis of hun vaardigheden. Zij willen het liefste de beste
+                van de wereld worden in hun vakgebied. Hun grootste probleem is dat ze nogal eens
+                terecht komen in generalistische of leidinggevende taken, waarin ze mislukken
+                en waar ze een hartgrondige hekel aan hebben, omdat ze daarmee hun competentie
+                gebeid los hebben gelaten.
+            </p>
+        </article>
+
+        <article class="results__explanation">
+            <h2 class="results__explanationTitle">
+                Algemeen management (AM)
+            </h2>
+            <p class="results__explanationText">
+                Mensen met dit anker kenmerken zich door hun bekwaamheid in het leidinggeven aan
+                anderen, het integreren van functies en het dragen van verantwoordelijkheid voor een
+                afdeling of organisatie. Ontwikkeling van hun loopbaan bestaat uit het bekleden van een
+                steeds hogere en meer verantwoordelijke posities in een organisatie. Zij willen
+                verantwoordelijkheid en aanspreekbaar zijn voor het eindresultaat. Zij schrijven het succes
+                van een project of hun organisatie dan ook graag toe aan hun bekwame manier van
+                leidinggeven. Bekwaamheden die worden gekenmerkt door analystische vaardigheden, de
+                vaardigheden om met mensen en groepen om te gaan en de eigenshap om grote
+                verantwoordelijkheden aan te kunnen.
+            </p>
+        </article>
+
+        <article class="results__explanation">
+            <h2 class="results__explanationTitle">
+                Autonomie/onafhankelijkheid (AU)
+            </h2>
+            <p class="results__explanationText">
+                Mensen met dit anker hechten een groot belang aan autonomie en onafhankelijkheid. Zij
+                willen de ruimte om hun werk op een eigen manier te definiëren en in te richten. Zij willen
+                vrij zijn in alles wat zij doen. Vaak kiezen deze mensen voor een zelfstandig bestaan of voor
+                een baan met een hoge mate van autonomie waarin zij zelf bepalen hoe en wanneer zij
+                werken. Zij zijn desnoods bereid promotie of verbetering af te wijzen als daarmee hun
+                autonomie in het gedrang komt. Het kunnen zelfstandige adviseurs zijn, docenten of
+                onderwijzers, (kleine) zelfstandige ondernemers, vertegenwoordigers of freelancers.
+            </p>
+        </article>
+
+        <article class="results__explanation">
+            <h2 class="results__explanationTitle">
+                Zekerheid en stabiliteit (ZE)
+            </h2>
+            <p class="results__explanationText">
+                Mensen met dit anker streven bij het opbouwen en inrichten van hun loopbaan naar
+                vastigheid en stabiliteit op langere termijn. Zij voelen zich pas echt op hun gemak als ze in
+                hun loopbaan een zekere mate van succes en stabiliteit hebben bereikt, die tevens het
+                gevoel met zich meebrengt dat ze "het voor elkaar hebben". Dat wil zeggen: een basis voor
+                financiële zekerheid en de zekerheid van een vaste baan. Bij het handhaven van deze
+                zekerheden zijn ze bereid te voldoen aan de verwachtingen van de werkgever. Ze houden
+                zich niet zo bezig met de inhoud van hun werk of een hogere positie die binnen handbereik
+                is op basis van potentiele talenten. Voor hen is het gevoel van zekerheid en veiligheid
+                belangrijker dan de vraag wel werk ze precies doen.
+            </p>
+        </article>
+
+        <article class="results__explanation">
+            <h2 class="results__explanationTitle">
+                Ondernemingsgerichte creativiteit (OC)
+            </h2>
+            <p class="results__explanationText">
+                Mensen met dit anker hebben de behoefte aan een vorm van persoonlijke creativiteit
+                waarmee ze iets opbouwen dat groter is dan zijzelf. Zij onderscheiden zich op grond van hum
+                vermogen een eigen onderneming te creëren die het resultaat is van eigen inspanningen. Zij
+                identificeren zich volledig met die onderneming en het succes daarvan als bewijs van eigen
+                talenten. Deze behoefte is zo sterk dat ze bij het zoeken naar het ultieme succes de nodige
+                mislukkingen voor lief nemen. Ze zijn bereid risico's te nemen en hindernissen te
+                overwinnen.
+            </p>
+        </article>
+
+        <article class="results__explanation">
+            <h2 class="results__explanationTitle">
+                Dienstverlening/toewijding aan de zaak (DV)
+            </h2>
+            <p class="results__explanationText">
+                Mensen met dit anker kenmerken zich door het belang dat ze hechten aan werk dat iets van
+                waarden oplevert. Zoals je inzetten voor de leefbaarheid van de wereld, aandacht besteden
+                aan milieuproblemen en bijdragen aan de ontwikkeling van de mensen. Door middel van hun
+                beroep en het werkveld waarin ze werkzaam zijn, willen zij letterlijk uiting aan de zaken en
+                onderwerpen geven waar zij waarde aan hechten. Bijvoorbeeld door iets te geven, te
+                genezen, te verzorgen, te begeleiden of te adviseren. De desbetreffende waarden bepalen
+                het werk wat ze doen en de werkkring waarin zij dat willen doen.
+            </p>
+        </article>
+
+        <article class="results__explanation">
+            <h2 class="results__explanationTitle">
+                Zuivere uitdaging (UI)
+            </h2>
+            <p class="results__explanationText">
+                Mensen met dit anker hebben oven alles behoefte aan nieuwe kansen en variatie, aan
+                ogenschijnlijk onoverkomelijke obstakels of sterke concurrenten waartegen zij het op
+                kunnen nemen. Het soort werk wat zij doen, is minder belangrijk dan het plezier wat zij
+                beleven aan het wedijveren met anderen of het overwinnen van obstakels of tegenstanders.
+                Als zij er niet in slagen steeds moeilijkere obstakels te vinden, wordt het te saai, Dan gaan ze
+                weg en zoeken ze elders naar een nieuwe uitdaging. Sommigen vinden hun uitdaging in
+                intellectueel werk, sommigen in het analyseren en ontwarren van complexe situaties en
+                sommigen in het concurreren van anderen.
+            </p>
+        </article>
+
+        <article class="results__explanation">
+            <h2 class="results__explanationTitle">
+                Levensstijl (LS)
+            </h2>
+            <p class="results__explanationText">
+                Mensen met dit anker hechten waarde aan het integreren van werk en gezinszaken. Voor
+                hen is het van groot belang dat hun loopbaan, hun gezinsleven en persoonlijke waarden
+                zodanig in evenwicht zijn, dat weken en leven aansluit op hun persoonlijkheid en privéleven.
+                Sommigen richten hun werk in op de loopbaan van hun man of vrouw. Of ze zoeken naar
+                een baan in de omgeving waarin zij willen wonen, waar zij hun kinderen op willen laten
+                groeien of waar zij hun kinderen naar school willen laten gaan. Voor hen is een succesvol
+                leven niet afhankelijk van een succesvolle loopbaan, maar hoe het leven als geheel wordt
+                ervaren en hoe zij zich daarin persoonlijk ontwikkelen. In de huidige tijd wint dit anker
+                steeds meer terrein.
+            </p>
+        </article>
+
+    </section> */
+
+    createResult(){
+        this.chart = document.createElement("canvas");
+        this.chart.setAttribute("id", "myChart");
+
+        //section will append this
+        this.figureChart = document.createElement("figure");
+        this.figureChart.setAttribute("class", "results__chart");
+        //figure append canvas
+        this.figureChart.appendChild(this.chart);
+
+        this.resultInfoText = document.createElement("h2");
+        this.resultInfoText.setAttribute("class", "results__infoText");
+        this.resultInfoText.innerText = "Hieronder staan korte omschrijvingen van de ankers die je kan lezen. Kijk wat jij hiervan herkent."
+
+        this.resultExplanationTitle1 = document.createElement("h2");
+        this.resultExplanationTitle1.setAttribute("class", "results__explanationTitle");
+        this.resultExplanationTitle1.innerText = "Technisch/functioneel (TF)";
+        this.resultExplanationText1 = document.createElement("p");
+        this.resultExplanationText1.setAttribute("class", "results__explanationText");
+        this.resultExplanationText1.innerText = 'Mensen met dit anker kenmerken zich door hun kennis, vaardigheden of "ambachtelijkheid" op een bepaald gebied. Zij zoeken voortdurend naar nieuwe uitdagingen op hun specifieke vakgebied, zodat zij zich voortdurend kunnen ontwikkelen naar een hoger niveau. Zij ontlenen hun identiteit aan het uitoefenen en  toepassen van hun specifieke kennis of hun vaardigheden. Zij willen het liefste de beste van de wereld worden in hun vakgebied. Hun grootste probleem is dat ze nogal eens terecht komen in generalistische of leidinggevende taken, waarin ze mislukken en waar ze een hartgrondige hekel aan hebben, omdat ze daarmee hun competentie gebeid los hebben gelaten.'
+        this.resultArticle1 = document.createElement("article");
+        this.resultArticle1.setAttribute("class", "results__explanation")
+        this.resultArticle1.appendChild(this.resultExplanationTitle1);
+        this.resultArticle1.appendChild(this.resultExplanationText1);
+
+        this.resultExplanationTitle2 = document.createElement("h2");
+        this.resultExplanationTitle2.setAttribute("class", "results__explanationTitle");
+        this.resultExplanationTitle2.innerText = "Algemeen management (AM)";
+        this.resultExplanationText2 = document.createElement("p");
+        this.resultExplanationText2.setAttribute("class", "results__explanationText");
+        this.resultExplanationText2.innerText = 'Mensen met dit anker kenmerken zich door hun bekwaamheid in het leidinggeven aan anderen, het integreren van functies en het dragen van verantwoordelijkheid voor een afdeling of organisatie. Ontwikkeling van hun loopbaan bestaat uit het bekleden van een steeds hogere en meer verantwoordelijke posities in een organisatie. Zij willen verantwoordelijkheid en aanspreekbaar zijn voor het eindresultaat. Zij schrijven het succes van een project of hun organisatie dan ook graag toe aan hun bekwame manier van leidinggeven. Bekwaamheden die worden gekenmerkt door analystische vaardigheden, de vaardigheden om met mensen en groepen om te gaan en de eigenshap om grote verantwoordelijkheden aan te kunnen.'
+        this.resultArticle2 = document.createElement("article");
+        this.resultArticle2.setAttribute("class", "results__explanation")
+        this.resultArticle2.appendChild(this.resultExplanationTitle2);
+        this.resultArticle2.appendChild(this.resultExplanationText2);
+        
+        this.resultExplanationTitle3 = document.createElement("h2");
+        this.resultExplanationTitle3.setAttribute("class", "results__explanationTitle");
+        this.resultExplanationTitle3.innerText = "Autonomie/onafhankelijkheid (AU)"
+        this.resultExplanationText3 = document.createElement("p");
+        this.resultExplanationText3.setAttribute("class", "results__explanationText");
+        this.resultExplanationText3.innerText = 'Mensen met dit anker hechten een groot belang aan autonomie en onafhankelijkheid. Zij willen de ruimte om hun werk op een eigen manier te definiëren en in te richten. Zij willen vrij zijn in alles wat zij doen. Vaak kiezen deze mensen voor een zelfstandig bestaan of voor een baan met een hoge mate van autonomie waarin zij zelf bepalen hoe en wanneer zij werken. Zij zijn desnoods bereid promotie of verbetering af te wijzen als daarmee hun autonomie in het gedrang komt. Het kunnen zelfstandige adviseurs zijn, docenten of onderwijzers, (kleine) zelfstandige ondernemers, vertegenwoordigers of freelancers.'
+        this.resultArticle3 = document.createElement("article");
+        this.resultArticle3.setAttribute("class", "results__explanation")
+        this.resultArticle3.appendChild(this.resultExplanationTitle3);
+        this.resultArticle3.appendChild(this.resultExplanationText3);
+        
+        this.resultExplanationTitle4 = document.createElement("h2");
+        this.resultExplanationTitle4.setAttribute("class", "results__explanationTitle");
+        this.resultExplanationTitle4.innerText = 'Zekerheid en stabiliteit (ZE)';
+        this.resultExplanationText4 = document.createElement("p");
+        this.resultExplanationText4.setAttribute("class", "results__explanationText");
+        this.resultExplanationText4.innerText = 'Mensen met dit anker streven bij het opbouwen en inrichten van hun loopbaan naar vastigheid en stabiliteit op langere termijn. Zij voelen zich pas echt op hun gemak als ze in hun loopbaan een zekere mate van succes en stabiliteit hebben bereikt, die tevens het gevoel met zich meebrengt dat ze "het voor elkaar hebben". Dat wil zeggen: een basis voor financiële zekerheid en de zekerheid van een vaste baan. Bij het handhaven van deze zekerheden zijn ze bereid te voldoen aan de verwachtingen van de werkgever. Ze houden zich niet zo bezig met de inhoud van hun werk of een hogere positie die binnen handbereik is op basis van potentiele talenten. Voor hen is het gevoel van zekerheid en veiligheid belangrijker dan de vraag wel werk ze precies doen.';
+        this.resultArticle4 = document.createElement("article");
+        this.resultArticle4.setAttribute("class", "results__explanation")
+        this.resultArticle4.appendChild(this.resultExplanationTitle4);
+        this.resultArticle4.appendChild(this.resultExplanationText4);
+        
+        this.resultExplanationTitle5 = document.createElement("h2");
+        this.resultExplanationTitle5.setAttribute("class", "results__explanationTitle");
+        this.resultExplanationTitle5.innerText = 'Ondernemingsgerichte creativiteit (OC)';
+        this.resultExplanationText5 = document.createElement("p");
+        this.resultExplanationText5.setAttribute("class", "results__explanationText");
+        this.resultExplanationText5.innerText = 'Mensen met dit anker hebben de behoefte aan een vorm van persoonlijke creativiteit waarmee ze iets opbouwen dat groter is dan zijzelf. Zij onderscheiden zich op grond van hum vermogen een eigen onderneming te creëren die het resultaat is van eigen inspanningen. Zij identificeren zich volledig met die onderneming en het succes daarvan als bewijs van eigen talenten. Deze behoefte is zo sterk dat ze bij het zoeken naar het ultieme succes de nodige mislukkingen voor lief nemen. Ze zijn bereid risicos te nemen en hindernissen te overwinnen.';
+        this.resultArticle5 = document.createElement("article");
+        this.resultArticle5.setAttribute("class", "results__explanation")
+        this.resultArticle5.appendChild(this.resultExplanationTitle5);
+        this.resultArticle5.appendChild(this.resultExplanationText5);
+
+        this.resultExplanationTitle6 = document.createElement("h2");
+        this.resultExplanationTitle6.setAttribute("class", "results__explanationTitle");
+        this.resultExplanationTitle6.innerText = 'Dienstverlening/toewijding aan de zaak (DV)';
+        this.resultExplanationText6 = document.createElement("p");
+        this.resultExplanationText6.setAttribute("class", "results__explanationText");
+        this.resultExplanationText6.innerText = 'Mensen met dit anker kenmerken zich door het belang dat ze hechten aan werk dat iets van waarden oplevert. Zoals je inzetten voor de leefbaarheid van de wereld, aandacht besteden aan milieuproblemen en bijdragen aan de ontwikkeling van de mensen. Door middel van hun beroep en het werkveld waarin ze werkzaam zijn, willen zij letterlijk uiting aan de zaken en onderwerpen geven waar zij waarde aan hechten. Bijvoorbeeld door iets te geven, te genezen, te verzorgen, te begeleiden of te adviseren. De desbetreffende waarden bepalen het werk wat ze doen en de werkkring waarin zij dat willen doen.';
+        this.resultArticle6 = document.createElement("article");
+        this.resultArticle6.setAttribute("class", "results__explanation")
+        this.resultArticle6.appendChild(this.resultExplanationTitle6);
+        this.resultArticle6.appendChild(this.resultExplanationText6);
+        
+        this.resultExplanationTitle7 = document.createElement("h2");
+        this.resultExplanationTitle7.setAttribute("class", "results__explanationTitle");
+        this.resultExplanationTitle7.innerText = 'Zuivere uitdaging (UI)';
+        this.resultExplanationText7 = document.createElement("p");
+        this.resultExplanationText7.setAttribute("class", "results__explanationText");
+        this.resultExplanationText7.innerText = 'Mensen met dit anker hebben oven alles behoefte aan nieuwe kansen en variatie, aan ogenschijnlijk onoverkomelijke obstakels of sterke concurrenten waartegen zij het op kunnen nemen. Het soort werk wat zij doen, is minder belangrijk dan het plezier wat zij beleven aan het wedijveren met anderen of het overwinnen van obstakels of tegenstanders. Als zij er niet in slagen steeds moeilijkere obstakels te vinden, wordt het te saai, Dan gaan ze weg en zoeken ze elders naar een nieuwe uitdaging. Sommigen vinden hun uitdaging in intellectueel werk, sommigen in het analyseren en ontwarren van complexe situaties en sommigen in het concurreren van anderen.';
+        this.resultArticle7 = document.createElement("article");
+        this.resultArticle7.setAttribute("class", "results__explanation")
+        this.resultArticle7.appendChild(this.resultExplanationTitle7);
+        this.resultArticle7.appendChild(this.resultExplanationText7);
+        
+        this.resultExplanationTitle8 = document.createElement("h2");
+        this.resultExplanationTitle8.setAttribute("class", "results__explanationTitle");
+        this.resultExplanationTitle8.innerText = 'Levensstijl (LS)';
+        this.resultExplanationText8 = document.createElement("p");
+        this.resultExplanationText8.setAttribute("class", "results__explanationText");
+        this.resultExplanationText8.innerText = 'Mensen met dit anker hechten waarde aan het integreren van werk en gezinszaken. Voor hen is het van groot belang dat hun loopbaan, hun gezinsleven en persoonlijke waarden zodanig in evenwicht zijn, dat weken en leven aansluit op hun persoonlijkheid en privéleven. Sommigen richten hun werk in op de loopbaan van hun man of vrouw. Of ze zoeken naar een baan in de omgeving waarin zij willen wonen, waar zij hun kinderen op willen laten groeien of waar zij hun kinderen naar school willen laten gaan. Voor hen is een succesvol leven niet afhankelijk van een succesvolle loopbaan, maar hoe het leven als geheel wordt ervaren en hoe zij zich daarin persoonlijk ontwikkelen. In de huidige tijd wint dit anker steeds meer terrein.';
+        this.resultArticle8 = document.createElement("article");
+        this.resultArticle8.setAttribute("class", "results__explanation")
+        this.resultArticle8.appendChild(this.resultExplanationTitle8);
+        this.resultArticle8.appendChild(this.resultExplanationText8);
+
+        //section append everything above
+        this.resultSection = document.createElement("section");
+        this.resultSection.setAttribute("class", "results");
+        this.resultSection.setAttribute("id", "js--resultSection");
+
+        this.resultSection.appendChild(this.figureChart);
+        this.resultSection.appendChild(this.resultInfoText);
+        this.resultSection.appendChild(this.resultArticle1);
+        this.resultSection.appendChild(this.resultArticle2);
+        this.resultSection.appendChild(this.resultArticle3);
+        this.resultSection.appendChild(this.resultArticle4);
+        this.resultSection.appendChild(this.resultArticle5);
+        this.resultSection.appendChild(this.resultArticle6);
+        this.resultSection.appendChild(this.resultArticle7);
+        this.resultSection.appendChild(this.resultArticle8);
+
+        //body append section
+        document.getElementsByTagName("body")[0].appendChild(this.resultSection);
+    }
 }
 
 let app = new App("/js/loopbaanAnkers.json");
