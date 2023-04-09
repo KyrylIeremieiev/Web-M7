@@ -1,3 +1,4 @@
+@use "../../abstracts/colors";
 .vragen{
     min-height: calc(90vh - 18rem);
     width: 50vw;
@@ -6,7 +7,7 @@
     align-items: center;
     flex-direction: column;
     gap: 2rem;
-    color: #5a8989;
+    color: map-get(colors.$primaryColors,"blue");
     
     &__vraagNummerWrapper{
         display: flex;
@@ -47,7 +48,7 @@
             height: 2rem;
             list-style: none;
             height: 6rem;
-            border: #5a8989 0.1rem solid;
+            border: map-get(colors.$primaryColors,"blue") 0.1rem solid;
             display: flex;
             justify-content: center;
 
@@ -103,28 +104,28 @@
     &__navButton{
         width: 100%;
         height: 6rem;
-        border: 0.1rem solid #5a8989;
+        border: 0.1rem solid map-get(colors.$primaryColors,"blue");
         background: none;
         font-weight: 800;
         font-size: 2rem;
-        color: #5a8989;
+        color: map-get(colors.$primaryColors,"blue");
 
         &:hover{
             cursor: pointer;
-            background: #19aea908;
+            background: map-get(colors.$primaryColors,"buttonHover");
         }
     }
 
     &__progBar{
         width: 80%;
         height: 2.4rem;
-        border: 0.1rem solid #5a8989;
+        border: 0.1rem solid map-get(colors.$primaryColors,"blue");
 
         &Fill{
             overflow: hidden;
             width: 20rem;
             height: 100%;
-            background: #19aeaa;
+            background: map-get(colors.$primaryColors,"lightBlue");
         }
     }
 
@@ -135,4 +136,25 @@
         font-size: 1.8rem;
         margin-top: 2rem;
     }  
+
+    &__finishButton{
+        &:hover{
+            background: map-get(colors.$primaryColors,"buttonHover");
+        }
+    }
+
+    &__finishButton--right{
+        border-top-left-radius: 0;
+        border-top-right-radius: 1.8rem;
+        border-bottom-left-radius: 1.8rem;
+        border-bottom-right-radius: 0rem;
+
+        &:hover{
+            border-top-left-radius: 1.8rem;
+            border-top-right-radius: 0;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 1.8rem;            
+        }
+    }
+
 }

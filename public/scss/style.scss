@@ -1,9 +1,12 @@
 @use "./abstracts/reset";
 @use "./base.scss";
 
+
 // components 
 @use "./components/banner";
 @use "./components/vlba/info.scss";
+
+@use "./components/vlba/inleveren.scss";
 
 @use "./components/vlba/vragen.scss";
 

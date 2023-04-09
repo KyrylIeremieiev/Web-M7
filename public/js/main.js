@@ -32,7 +32,8 @@ class App{
         the variable will be the element with that id as of time. Meaning that it selects the nothing, because the element with id is not created yet.
         This is done after init, it can be used because the element selection is done after the element is created.*/
         this.tie = new TieTogether(document.getElementById("js--infoSection"), document.getElementById("js--vragen"), 
-        document.getElementById("js--resultSection"), document.getElementById("js--startBtn"));
+        document.getElementById("js--resultSection"), document.getElementById("js--startBtn"), 
+        document.getElementById("js--inleveren"), document.getElementById("js--inleveren-back"), document.getElementById("js--inleveren-forward"));
     }
 }
 
@@ -183,31 +184,44 @@ class ValueCounter{
 
     //this is incase somebody tries to go to previous questions, so that you dont assign value extra
     ReverseValueCases(currentPage){
+        this.PrevInputButtons = []
+        this.PrevPage = currentPage + 1
+        for(let i = 0; i < 7; i++){
+            this.PrevInputButtons.push(this.htmlScoreButton[this.PrevPage*7+i-7])
+        }
+
+        for(let y = 0; y < this.PrevInputButtons.length; y++){
+            if(this.PrevInputButtons[y].checked){
+                this.reverseFactor = this.PrevInputButtons[y].value;
+                console.log(this.reverseFactor)
+            }
+        } 
+
         this.currentPage = currentPage;
         switch(this.Value[this.currentPage]){
             case "TF":
-                this.TF-=parseInt(this.factor);
+                this.TF-=parseInt(this.reverseFactor);
                 break;
             case "AM":
-                this.AM-=parseInt(this.factor);
+                this.AM-=parseInt(this.reverseFactor);
                 break;
             case "AU":
-                this.AU-=parseInt(this.factor);
+                this.AU-=parseInt(this.reverseFactor);
                 break;
             case "ZE":
-                this.ZE-=parseInt(this.factor);
+                this.ZE-=parseInt(this.reverseFactor);
                 break;
             case "OC":
-                this.OC-=parseInt(this.factor);
+                this.OC-=parseInt(this.reverseFactor);
                 break;
             case "DV":
-                this.DV-=parseInt(this.factor);
+                this.DV-=parseInt(this.reverseFactor);
                 break;
             case "UI":
-                this.UI-=parseInt(this.factor);
+                this.UI-=parseInt(this.reverseFactor);
                 break;
             case "LS":
-                this.LS-=parseInt(this.factor);
+                this.LS-=parseInt(this.reverseFactor);
                 break;
         }
     }
@@ -349,19 +363,29 @@ class TieTogether{
     htmlStartSection
     htmlFormSection
     htmlResultSection
+    htmlInleveren
+    htmlInleverenBack
+    htmlInleverenForward
 
-    constructor(htmlStartSection, htmlFormSection, htmlResultSection, htmlStartButton){
+    constructor(htmlStartSection, htmlFormSection, htmlResultSection, htmlStartButton, htmlInleveren, htmlInleverenBack, htmlInleverenForward){
         this.htmlStartSection = htmlStartSection;
         this.htmlFormSection = htmlFormSection;
         this.htmlResultSection = htmlResultSection;
         this.htmlStartButton = htmlStartButton;
+        this.htmlInleveren = htmlInleveren;
+        this.htmlInleverenBack = htmlInleverenBack;
+        this.htmlInleverenForward = htmlInleverenForward;
 
         //reset display
         this.htmlStartSection.style.display = "flex"
         this.htmlFormSection.style.display = "none"
+        this.htmlInleveren.style.display = "none"
         this.htmlResultSection.style.display = "none"
 
+        //onclicks
         this.htmlStartButton.onclick = this.GoToForm;
+        this.htmlInleverenBack.onclick = this.GoBackToForm;
+        this.htmlInleverenForward.onclick = this.GoToResult;
     }
 
     GoToForm = () =>{
@@ -371,7 +395,17 @@ class TieTogether{
 
     GoToEnd(){
         this.htmlFormSection.style.display = "none";
-        this.htmlResultSection.style.display = "flex";
+        this.htmlInleveren.style.display = "flex";
+    }
+
+    GoBackToForm = () =>{
+        this.htmlInleveren.style.display = "none"
+        this.htmlFormSection.style.display = "flex"
+    }
+
+    GoToResult = () =>{
+        this.htmlInleveren.style.display = "none"
+        this.htmlResultSection.style.display = "flex"
     }
 }
 
@@ -420,6 +454,7 @@ class CreateHtml{
         this.header = new CreateHeader();
         this.info = new CreateInfo();
         this.questions = new CreateQuestion();
+        this.inleveren = new CreateInleveren();
         this.results = new CreateResult();
     }
 }
@@ -694,6 +729,49 @@ class CreateQuestion{
         document.getElementsByTagName("body")[0].appendChild(this.VraagSection);
     }
 
+}
+
+class CreateInleveren{
+    constructor(){
+        this.createInleveren();
+    }
+
+/*  <section class="vragen__finishButtonWrapper">
+        <h2 class="vragen__vraag" id="">Je bent helemaal klaar!</h2>
+        <button class="info__startButton vragen__finishButton">Ga terug</button>
+        <button class="info__startButton vragen__finishButton vragen__finishButton--right">Inleveren</button>
+    </section> */
+
+    createInleveren(){
+        this.inleverenTitle = document.createElement("h2")
+        this.inleverenTitle.setAttribute("class", "inleveren__titel");
+        this.inleverenTitle.innerText = "Je bent helemaal klaar!";
+
+        this.inleverenButtonGoBack = document.createElement("button");
+        this.inleverenButtonGoBack.classList.add("info__startButton");
+        this.inleverenButtonGoBack.classList.add("vragen__finishButton");
+        this.inleverenButtonGoBack.setAttribute("id", "js--inleveren-back")
+        this.inleverenButtonGoBack.innerText = "Ga terug!";
+
+        this.inleverenButtonGoForward = document.createElement("button");
+        this.inleverenButtonGoForward.classList.add("info__startButton");
+        this.inleverenButtonGoForward.classList.add("vragen__finishButton");
+        this.inleverenButtonGoForward.classList.add("vragen__finishButton--right");
+        this.inleverenButtonGoForward.setAttribute("id", "js--inleveren-forward")
+
+        this.inleverenButtonGoForward.innerText = 'Inleveren';
+
+        this.inleverenSection = document.createElement("section");
+        this.inleverenSection.setAttribute("class", "inleveren");
+        this.inleverenSection.setAttribute("id", "js--inleveren")
+        //Section append buttons and h2
+        this.inleverenSection.appendChild(this.inleverenTitle);
+        this.inleverenSection.appendChild(this.inleverenButtonGoBack);
+        this.inleverenSection.appendChild(this.inleverenButtonGoForward);
+
+
+        document.getElementsByTagName("body")[0].appendChild(this.inleverenSection);
+    }
 }
 
 class CreateResult{
