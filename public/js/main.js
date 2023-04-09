@@ -141,44 +141,37 @@ class ValueCounter{
         this.DV = 0;
         this.UI = 0;
         this.LS = 0;
+
+        setInterval(() =>{this.Lockout()}, 33); 
     }
 
     valueCases(){
         switch(this.Value[this.currentPage-1]){
             case "TF":
                 this.TF+=parseInt(this.factor);
-                console.log(this.TF)
                 break;
             case "AM":
                 this.AM+=parseInt(this.factor);
-                console.log(this.AM)
                 break;
             case "AU":
                 this.AU+=parseInt(this.factor);
-                console.log(this.AU)
                 break;
             case "ZE":
                 this.ZE+=parseInt(this.factor);
-                console.log(this.ZE)
                 break;
             case "OC":
                 this.OC+=parseInt(this.factor);
-                console.log(this.OC)
                 break;
             case "DV":
                 this.DV+=parseInt(this.factor);
-                console.log(this.DV)
                 break;
             case "UI":
                 this.UI+=parseInt(this.factor);
-                console.log(this.UI)
                 break;
             case "LS":
                 this.LS+=parseInt(this.factor);
-                console.log(this.LS)
                 break;
         }
-        this.Lockout()
         this.resultCheck()
     }
 
@@ -186,6 +179,7 @@ class ValueCounter{
     ReverseValueCases(currentPage){
         this.PrevInputButtons = []
         this.PrevPage = currentPage + 1
+        this.test = 0
         for(let i = 0; i < 7; i++){
             this.PrevInputButtons.push(this.htmlScoreButton[this.PrevPage*7+i-7])
         }
@@ -193,7 +187,6 @@ class ValueCounter{
         for(let y = 0; y < this.PrevInputButtons.length; y++){
             if(this.PrevInputButtons[y].checked){
                 this.reverseFactor = this.PrevInputButtons[y].value;
-                console.log(this.reverseFactor)
             }
         } 
 
@@ -250,13 +243,6 @@ class ValueCounter{
             this.currentInputButtons.push(this.htmlScoreButton[this.currentPage*7+i-7])
         }
 
-        //anytime you go forward it checks how many 10 value buttons are clicked, and adds +1 for each to this.maxChosen
-        for(let y = 0; y < this.htmlScoreButton.length; y++){
-            if(this.htmlScoreButton[y].checked && this.htmlScoreButton[y].value == 10){
-                this.maxChosen+=1;
-            }
-        }
-
         for(let y = 0; y < this.currentInputButtons.length; y++){
             if(this.currentInputButtons[y].checked){
                 this.factor = this.currentInputButtons[y].value;
@@ -278,22 +264,35 @@ class ValueCounter{
 
 
     Lockout(){
+        for(let y = 0; y < this.htmlScoreButton.length; y++){
+            if(this.htmlScoreButton[y].checked && this.htmlScoreButton[y].value == 10){
+                this.maxChosen+=1;
+                console.log(this.maxChosen)
+            }
+        }
         this.labelLi = document.getElementById("js--tenthBtnLi")
         this.label = document.getElementById("js--tenthBtnLabel")
 
         if(this.maxChosen == 3){
-            this.labelLi.style.border = "#C0C0C0 0.1rem solid"
-            this.label.style.color = "#C0C0C0"
-            this.initInterval();
+            this.labelLi.style.border = "#C0C0C0 0.1rem solid";
+            this.label.style.color = "#C0C0C0";
+            this.TenthBtnBLock()
+            //mandatory, because of how the program works it needs to reset
+            this.maxChosen = 0;
         }
         else{
-            //this is mandatory, because of the way line 239-244 works
-            this.maxChosen = 0
-        }
-    }
+            //mandatory, because of how the program works it needs to reset
+            this.maxChosen = 0;
+            for(let i = 0; i < this.htmlScoreButton.length; i++){
+                if (this.htmlScoreButton[i].value == 10){
+                    this.htmlScoreButton[i].removeAttribute("disabled");
 
-    initInterval(){
-        this.TenthBtnBLock()
+                    this.labelLi.style.border = "#5a8989 0.1rem solid";
+                    this.label.style.color = "#5a8989";
+                }
+            }
+
+        }
     }
 
     TenthBtnBLock(){
@@ -519,7 +518,6 @@ class CreateInfo{
     </section>  */
 
     createInfo(){
-        console.log("yep")
         this.FirstInfoText = document.createElement("h2");
         this.FirstInfoText.setAttribute("class", "info__text");
         this.FirstInfoText.innerText = "Je zal zomenteen de Vragenlijst van Loopbaanankers (Schein) maken waaruit je zal zien welke loopbaananker het beste bij jou past Start hieronder de test"
