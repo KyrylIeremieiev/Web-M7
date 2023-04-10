@@ -520,15 +520,15 @@ class CreateInfo{
     createInfo(){
         this.FirstInfoText = document.createElement("h2");
         this.FirstInfoText.setAttribute("class", "info__text");
-        this.FirstInfoText.innerText = "Je zal zomenteen de Vragenlijst van Loopbaanankers (Schein) maken waaruit je zal zien welke loopbaananker het beste bij jou past Start hieronder de test"
+        this.FirstInfoText.innerText = "Je zal zomenteen de Vragenlijst van Loopbaanankers (Schein) maken waaruit je zal zien welke loopbaananker het beste bij jou past Start hieronder de test."
 
         this.SecondInfoText = document.createElement("h2");
         this.SecondInfoText.setAttribute("class", "info__text");
-        this.SecondInfoText.innerText = "Hier komt informatie te staan over de test Hier komt informatie te staan over de test Hier komt informatie te staan over de test"
+        this.SecondInfoText.innerText = "U krijgt zometeen een bewering te zien, die bewering kunt u 1-6 punten geven. 1 betekent: past helemaal niet bij mij. 6 betekent: past precies bij mij."
         
         this.ThirdInfoText = document.createElement("h2");
         this.ThirdInfoText.setAttribute("class", "info__text");
-        this.ThirdInfoText.innerText = "Hier komt informatie te staan over de test Hier komt informatie te staan over de test Hier komt informatie te staan over de test"
+        this.ThirdInfoText.innerText = "Drie beweringen kunt u 10 punten geven. Als u een bewering 10 punten geeft zegt u dat de bewering extra bij u past. Dit formulier bestaat uit 40 beweringen en zal weergeven welke loopbaan-ankers het meest bij u passen."
 
         this.InfoArticle = document.createElement("article");
         this.InfoArticle.setAttribute("class", "info__textWrapper");
