@@ -267,6 +267,7 @@ body {
 }
 
 .gvm {
+  color: #5a8989;
   width: 80vw;
   min-height: 80vh;
   display: grid;
