@@ -177,9 +177,10 @@ class ValueCounter{
 
     //this is incase somebody tries to go to previous questions, so that you dont assign value extra
     ReverseValueCases(currentPage){
-        this.PrevInputButtons = []
-        this.PrevPage = currentPage + 1
-        this.test = 0
+        this.PrevInputButtons = [];
+        this.PrevPage = currentPage + 1;
+        this.test = 0;
+        this.btnChecked = 0;
         for(let i = 0; i < 7; i++){
             this.PrevInputButtons.push(this.htmlScoreButton[this.PrevPage*7+i-7])
         }
@@ -187,8 +188,13 @@ class ValueCounter{
         for(let y = 0; y < this.PrevInputButtons.length; y++){
             if(this.PrevInputButtons[y].checked){
                 this.reverseFactor = this.PrevInputButtons[y].value;
+                this.btnChecked+=1
             }
         } 
+        if(this.btnChecked == 7){
+            this.reverseFactor;
+        }
+
 
         this.currentPage = currentPage;
         switch(this.Value[this.currentPage]){
