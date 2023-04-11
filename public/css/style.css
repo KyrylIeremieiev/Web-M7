@@ -236,4 +236,106 @@ body {
   line-height: 1.2em;
 }
 
+.gvm {
+  width: 80vw;
+  min-height: 80vh;
+  display: grid;
+  grid-template-areas: "header header1 header2" ". . ." ". . ." "item leftText rightText" "item1 leftText1 rightText1" "item2 leftText2 rightText2" "item3 leftText3 rightText3" ". . button";
+  grid-template-columns: 10% 45% 45%;
+  gap: 2rem;
+  margin-bottom: 4rem;
+  margin-top: 4rem;
+}
+.gvm__gevoelItem {
+  font-size: 2.4rem;
+  list-style: none;
+  position: relative;
+}
+.gvm__gevoelItemTitle {
+  grid-area: header;
+}
+.gvm__gevoelItem--1 {
+  grid-area: item;
+}
+.gvm__gevoelItem--2 {
+  grid-area: item1;
+}
+.gvm__gevoelItem--3 {
+  grid-area: item2;
+}
+.gvm__gevoelItem--4 {
+  grid-area: item3;
+}
+.gvm__signalenTitle {
+  grid-area: header1;
+}
+.gvm__signalenTextarea--1 {
+  grid-area: leftText;
+  border: rgb(255, 24, 24) 0.2rem solid;
+}
+.gvm__signalenTextarea--2 {
+  grid-area: leftText1;
+  border: rgb(255, 132, 0) 0.2rem solid;
+}
+.gvm__signalenTextarea--3 {
+  grid-area: leftText2;
+  border: rgb(255, 221, 0) 0.2rem solid;
+}
+.gvm__signalenTextarea--4 {
+  grid-area: leftText3;
+  border: rgb(42, 205, 20) 0.2rem solid;
+}
+.gvm__acties {
+  width: 20%;
+}
+.gvm__actiesTitle {
+  grid-area: header2;
+}
+.gvm__actiesTextarea--1 {
+  grid-area: rightText;
+  border: rgb(255, 24, 24) 0.2rem solid;
+}
+.gvm__actiesTextarea--2 {
+  grid-area: rightText1;
+  border: rgb(255, 132, 0) 0.2rem solid;
+}
+.gvm__actiesTextarea--3 {
+  grid-area: rightText2;
+  border: rgb(255, 221, 0) 0.2rem solid;
+}
+.gvm__actiesTextarea--4 {
+  grid-area: rightText3;
+  border: rgb(42, 205, 20) 0.2rem solid;
+}
+
+.inleverButton {
+  grid-area: button;
+  width: 40%;
+  justify-self: right;
+  background: white;
+}
+
+textarea {
+  resize: none;
+}
+
+.gevoelStip {
+  width: 2rem;
+  height: 2rem;
+  border: 0.2rem solid;
+  border-radius: 50%;
+}
+.gevoelStip--1 {
+  border-color: rgb(255, 24, 24);
+}
+.gevoelStip--2 {
+  border-color: rgb(255, 132, 0);
+}
+.gevoelStip--3 {
+  border-color: rgb(255, 221, 0);
+}
+.gevoelStip--4 {
+  border-color: rgb(42, 205, 20);
+}
+
 /*# sourceMappingURL=style.css.map */

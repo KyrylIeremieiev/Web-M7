@@ -1,0 +1,143 @@
+.gvm{
+    width: 80vw;
+    min-height: 80vh;
+    display: grid;
+    grid-template-areas: 'header header1 header2'
+                        '. . .'
+                        '. . .'
+                         'item leftText rightText'
+                         'item1 leftText1 rightText1'
+                         'item2 leftText2 rightText2'
+                         'item3 leftText3 rightText3'
+                         '. . button';
+
+    grid-template-columns: 10% 45% 45%;
+    gap: 2rem;
+    margin-bottom: 4rem;
+    margin-top: 4rem;
+
+    &__gevoel{
+
+        &Item{
+            font-size: 2.4rem;
+            list-style: none;
+            position: relative;
+
+           
+
+                
+            &Title{
+                grid-area: header;
+            }
+
+            &--1{
+                grid-area: item;
+            }
+
+            &--2{
+                grid-area: item1;
+            }
+
+            &--3{
+                grid-area: item2;
+            }
+
+            &--4{
+                grid-area: item3;
+            }
+
+        }
+        
+    }
+    &__signalen{
+        &Title{
+            grid-area: header1;
+        }
+
+        &Textarea{
+            
+
+            &--1{
+                grid-area: leftText;
+                border: rgb(255, 24, 24) 0.2rem solid;
+            }
+
+            &--2{
+                grid-area: leftText1;
+                border: rgb(255, 132, 0) 0.2rem solid;
+            }
+
+            &--3{
+                grid-area: leftText2;
+                border: rgb(255, 221, 0) 0.2rem solid;
+            }
+
+            &--4{
+                grid-area: leftText3;
+                border: rgb(42, 205, 20) 0.2rem solid;
+            }
+
+        }
+    }
+    &__acties{
+        width: 20%;
+        &Title{
+            grid-area: header2;
+        }
+
+        &Textarea{
+
+            &--1{
+                grid-area: rightText;
+                border: rgb(255, 24, 24) 0.2rem solid;
+            }
+
+            &--2{
+                grid-area: rightText1;
+                border: rgb(255, 132, 0) 0.2rem solid;
+            }
+
+            &--3{
+                grid-area: rightText2;
+                border: rgb(255, 221, 0) 0.2rem solid;
+            }
+
+            &--4{
+                grid-area: rightText3;
+                border: rgb(42, 205, 20) 0.2rem solid;
+            }
+
+        }
+    }
+}
+
+.inleverButton{
+    grid-area: button;
+    width: 40%;
+    justify-self: right;
+    background: white;
+}
+
+textarea{
+    resize: none;
+}
+
+.gevoelStip{
+    width: 2rem;
+    height: 2rem;
+    border: 0.2rem solid;
+    border-radius: 50%;
+
+    &--1{
+        border-color: rgb(255, 24, 24);
+    }
+    &--2{
+        border-color: rgb(255, 132, 0);
+    }
+    &--3{
+        border-color: rgb(255, 221, 0);
+    }
+    &--4{
+        border-color: rgb(42, 205, 20);
+    }
+}
