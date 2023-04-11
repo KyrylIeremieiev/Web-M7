@@ -266,7 +266,6 @@ body {
   line-height: 1.2em;
 }
 
-<<<<<<< HEAD
 .gvm {
   width: 80vw;
   min-height: 80vh;
@@ -367,7 +366,8 @@ textarea {
 }
 .gevoelStip--4 {
   border-color: rgb(42, 205, 20);
-=======
+}
+
 @media screen and (max-width: 81.25rem) {
   .vragen {
     width: 70vw;
@@ -407,7 +407,6 @@ textarea {
   .results {
     width: 80vw;
   }
->>>>>>> 2e99b10623628612bd9f64c8fdd91fb48063491d
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,10 +1,11 @@
 @use "./abstracts/reset";
 @use "./base.scss";
 
-
-// components 
+// vlba
 @use "./components/banner";
 @use "./components/vlba/info.scss";
+
+// components 
 
 @use "./components/vlba/inleveren.scss";
 
@@ -13,6 +14,5 @@
 
 // gvm
 @use "./components/gvm/gvm.scss";
-@use "./components/vlba/eindresultaat.scss";
 
 @use "./abstracts/mediaqueries";
