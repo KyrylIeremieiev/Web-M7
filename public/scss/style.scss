@@ -1,11 +1,6 @@
 @use "./abstracts/reset";
 @use "./base.scss";
 
-<<<<<<< HEAD
-// vlba
-@use "./components/banner";
-@use "./components/vlba/info.scss";
-=======
 
 // components 
 @use "./components/banner";
@@ -13,15 +8,11 @@
 
 @use "./components/vlba/inleveren.scss";
 
->>>>>>> 2e99b10623628612bd9f64c8fdd91fb48063491d
 @use "./components/vlba/vragen.scss";
 @use "./components/vlba/eindresultaat.scss";
 
-<<<<<<< HEAD
 // gvm
 @use "./components/gvm/gvm.scss";
-=======
 @use "./components/vlba/eindresultaat.scss";
 
 @use "./abstracts/mediaqueries";
->>>>>>> 2e99b10623628612bd9f64c8fdd91fb48063491d
