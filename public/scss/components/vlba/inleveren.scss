@@ -1,0 +1,13 @@
+@use "../../abstracts/colors";
+.inleveren{
+    min-height: calc(90vh - 18rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+    &__titel{
+        color: map-get(colors.$primaryColors,"blue");
+    }
+}

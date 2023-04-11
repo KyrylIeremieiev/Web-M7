@@ -92,6 +92,19 @@ body {
   border-top-right-radius: 1.8rem;
   border-bottom-left-radius: 1.8rem;
   border-bottom-right-radius: 0;
+  background: rgba(255, 255, 255, 0.3254901961);
+}
+
+.inleveren {
+  min-height: calc(90vh - 18rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.inleveren__titel {
+  color: #5a8989;
 }
 
 .vragen {
@@ -180,7 +193,7 @@ body {
 }
 .vragen__navButton:hover {
   cursor: pointer;
-  background: rgba(25, 174, 169, 0.031372549);
+  background: rgba(255, 255, 255, 0.3254901961);
 }
 .vragen__progBar {
   width: 80%;
@@ -200,6 +213,21 @@ body {
   font-size: 1.8rem;
   margin-top: 2rem;
 }
+.vragen__finishButton:hover {
+  background: rgba(255, 255, 255, 0.3254901961);
+}
+.vragen__finishButton--right {
+  border-top-left-radius: 0;
+  border-top-right-radius: 1.8rem;
+  border-bottom-left-radius: 1.8rem;
+  border-bottom-right-radius: 0rem;
+}
+.vragen__finishButton--right:hover {
+  border-top-left-radius: 1.8rem;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 1.8rem;
+}
 
 .results {
   width: 60vw;
@@ -212,8 +240,10 @@ body {
 .results__chart {
   width: 100%;
   height: 45rem;
-  background: blue;
   margin-top: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .results__infoText {
   font-size: 2.3rem;
@@ -236,6 +266,7 @@ body {
   line-height: 1.2em;
 }
 
+<<<<<<< HEAD
 .gvm {
   width: 80vw;
   min-height: 80vh;
@@ -336,6 +367,47 @@ textarea {
 }
 .gevoelStip--4 {
   border-color: rgb(42, 205, 20);
+=======
+@media screen and (max-width: 81.25rem) {
+  .vragen {
+    width: 70vw;
+    margin-top: 2rem;
+  }
+}
+@media screen and (max-width: 62.5rem) {
+  .info {
+    width: 80vw;
+  }
+}
+@media screen and (max-width: 56.25rem) {
+  body {
+    overflow-x: hidden;
+  }
+  .vragen {
+    width: 90vw;
+  }
+  .vragen__vraag {
+    font-size: 100%;
+  }
+  .vragen__scoreList {
+    width: 100%;
+    display: grid;
+  }
+  .vragen__progBar {
+    width: 90%;
+  }
+  .vragen__navButtons {
+    width: 100%;
+  }
+  .info {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    width: 90vw;
+  }
+  .results {
+    width: 80vw;
+  }
+>>>>>>> 2e99b10623628612bd9f64c8fdd91fb48063491d
 }
 
 /*# sourceMappingURL=style.css.map */
