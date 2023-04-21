@@ -188,11 +188,14 @@ class ValueCounter{
         for(let y = 0; y < this.PrevInputButtons.length; y++){
             if(this.PrevInputButtons[y].checked){
                 this.reverseFactor = this.PrevInputButtons[y].value;
+                
+            }
+            else{
                 this.btnChecked+=1
             }
         } 
         if(this.btnChecked == 7){
-            this.reverseFactor;
+            this.reverseFactor = 0;
         }
 
 
@@ -273,7 +276,6 @@ class ValueCounter{
         for(let y = 0; y < this.htmlScoreButton.length; y++){
             if(this.htmlScoreButton[y].checked && this.htmlScoreButton[y].value == 10){
                 this.maxChosen+=1;
-                console.log(this.maxChosen)
             }
         }
         this.labelLi = document.getElementById("js--tenthBtnLi")
@@ -317,14 +319,14 @@ class ValueCounter{
 
 class Charts{
     constructor(tf, am, au, ze, oc, dv, ui, ls){
-        this.TF = tf;
-        this.AM = am;
-        this.AU = au;
-        this.ZE = ze;
-        this.OC = oc;
-        this.DV = dv;
-        this.UI = ui;
-        this.LS = ls;
+        this.TF = tf / 5;
+        this.AM = am / 5;
+        this.AU = au / 5;
+        this.ZE = ze / 5;
+        this.OC = oc / 5;
+        this.DV = dv / 5;
+        this.UI = ui / 5;
+        this.LS = ls / 5;
 
         this.CreateChart();
     }
