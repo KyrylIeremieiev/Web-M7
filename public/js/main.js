@@ -341,7 +341,7 @@ class Charts{
             data: {
                 labels: ['TF', 'AM', 'AU', 'ZE', 'OC', 'DV', 'UI', 'LS'],
                 datasets: [{
-                    label: '# of Points',
+                    label: 'gem. punten',
                     data: [this.TF,
                         this.AM,
                         this.AU,
