@@ -414,9 +414,8 @@ textarea {
     content: "";
     position: absolute;
     top: 0;
-    left: 49.45%;
-    transform: translate(-45%);
-    width: 30rem;
+    left: 50%;
+    width: 100vw;
     height: 0.4rem;
   }
 }
