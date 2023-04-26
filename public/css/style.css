@@ -300,6 +300,11 @@ body {
 .gvm__signalenTitle {
   grid-area: header1;
 }
+.gvm__signalenTextarea {
+  padding: 1.5rem;
+  color: #5a8989;
+  font-size: 2rem;
+}
 .gvm__signalenTextarea--1 {
   grid-area: leftText;
   border: rgb(255, 24, 24) 0.2rem solid;

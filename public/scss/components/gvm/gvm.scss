@@ -56,7 +56,9 @@
         }
 
         &Textarea{
-            
+            padding: 1.5rem;
+            color: #5a8989;
+            font-size: 2rem;
 
             &--1{
                 grid-area: leftText;
