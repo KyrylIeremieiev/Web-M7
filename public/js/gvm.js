@@ -40,7 +40,7 @@ class CreateHeader{
     </header> */
     constructor(){
         this.headerImg = document.createElement("img");
-        this.headerImg.setAttribute("src", "img/site-logo-2.png");
+        this.headerImg.setAttribute("src", "img/site-logo-2.webp");
         this.headerImg.setAttribute("alt", "Logo van doesburg coaching");
         this.headerImg.setAttribute("class", "banner__logoImage");
 
@@ -202,3 +202,4 @@ class CreateMain{
 }
 
 let app = new App();
+let app2 = new App();

@@ -272,6 +272,7 @@ class ValueCounter{
     }
 
 
+    //present2
     Lockout(){
         for(let y = 0; y < this.htmlScoreButton.length; y++){
             if(this.htmlScoreButton[y].checked && this.htmlScoreButton[y].value == 10){
@@ -416,6 +417,7 @@ class TieTogether{
     }
 }
 
+//present1
 class CreateButtons{
     constructor(){
         this.htmlScoreButtonArr = []
@@ -466,7 +468,6 @@ class CreateHtml{
     }
 }
 
-
 class CreateHeader{
     constructor(){
         this.createHeader()
@@ -483,7 +484,7 @@ class CreateHeader{
 
     createHeader(){
         this.HeaderLogo = document.createElement("img");
-        this.HeaderLogo.setAttribute("src", "img/site-logo-2.png");
+        this.HeaderLogo.setAttribute("src", "img/site-logo-2.webp");
         this.HeaderLogo.setAttribute("alt", "De logo van Doesburg-Coaching");
         this.HeaderLogo.setAttribute("class", "banner__logoImage");
 
